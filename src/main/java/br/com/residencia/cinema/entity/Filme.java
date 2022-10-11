@@ -17,16 +17,16 @@ public class Filme {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_filme")
-	private Integer id_filme;
+	private Integer idFilme;
 	
 	@Column(name="nome_br")
-	private String nome_br;
+	private String nomeBr;
 	
 	@Column(name="nome_en")
-	private String nome_en;
+	private String nomeEn;
 	
 	@Column(name="ano_lancamento")
-	private Integer ano_lancamento;
+	private Integer anoLancamento;
 	
 	@Column(name="sinopse")
 	private String sinopse;
@@ -39,36 +39,36 @@ public class Filme {
 	@JoinColumn(name = "id_genero", referencedColumnName = "id_genero")
 	Genero genero;
 
-	public Integer getId_filme() {
-		return id_filme;
+	public Integer getIdFilme() {
+		return idFilme;
 	}
 
-	public void setId_filme(Integer id_filme) {
-		this.id_filme = id_filme;
+	public void setIdFilme(Integer idFilme) {
+		this.idFilme = idFilme;
 	}
 
-	public String getNome_br() {
-		return nome_br;
+	public String getNomeBr() {
+		return nomeBr;
 	}
 
-	public void setNome_br(String nome_br) {
-		this.nome_br = nome_br;
+	public void setNomeBr(String nome_br) {
+		this.nomeBr = nome_br;
 	}
 
-	public String getNome_en() {
-		return nome_en;
+	public String getNomeEn() {
+		return nomeEn;
 	}
 
-	public void setNome_en(String nome_en) {
-		this.nome_en = nome_en;
+	public void setNomeEn(String nome_en) {
+		this.nomeEn = nome_en;
 	}
 
-	public Integer getAno_lancamento() {
-		return ano_lancamento;
+	public Integer getAnoLancamento() {
+		return anoLancamento;
 	}
 
-	public void setAno_lancamento(Integer ano_lancamento) {
-		this.ano_lancamento = ano_lancamento;
+	public void setAnoLancamento(Integer ano_lancamento) {
+		this.anoLancamento = ano_lancamento;
 	}
 
 	public String getSinopse() {

@@ -28,9 +28,9 @@ public class FilmeService {
 	public Filme updateFilme(Filme filme, Integer id) {
 		Filme filmeAtual = getFilmeById(id);
 		
-		filmeAtual.setNome_br(filme.getNome_br());
-		filmeAtual.setNome_en(filme.getNome_en());
-		filmeAtual.setAno_lancamento(filme.getAno_lancamento());
+		filmeAtual.setNomeBr(filme.getNomeBr());
+		filmeAtual.setNomeEn(filme.getNomeEn());
+		filmeAtual.setAnoLancamento(filme.getAnoLancamento());
 		filmeAtual.setSinopse(filme.getSinopse());
 
 		return filmeRepository.save(filmeAtual);

@@ -17,7 +17,7 @@ public class Genero {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_genero")
-	private Integer id_genero;
+	private Integer idGenero;
 	
 	@Column(name="descricao")
 	private String descricao;
@@ -25,12 +25,12 @@ public class Genero {
 	@OneToMany(mappedBy = "genero")
 	Set<Filme> filme;
 
-	public Integer getId_genero() {
-		return id_genero;
+	public Integer getIdGenero() {
+		return idGenero;
 	}
 
-	public void setId_genero(Integer id_genero) {
-		this.id_genero = id_genero;
+	public void setIdGenero(Integer idGenero) {
+		this.idGenero = idGenero;
 	}
 
 	public String getDescricao() {

@@ -17,7 +17,7 @@ public class Diretor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_diretor")
-	private Integer id_diretor;
+	private Integer idDiretor;
 	
 	@Column(name="nome")
 	private String nome;
@@ -25,12 +25,12 @@ public class Diretor {
 	@OneToMany(mappedBy = "diretor")
 	Set<Filme> filme;
 
-	public Integer getId_diretor() {
-		return id_diretor;
+	public Integer getIdDiretor() {
+		return idDiretor;
 	}
 
-	public void setId_diretor(Integer id_diretor) {
-		this.id_diretor = id_diretor;
+	public void setIdDiretor(Integer idDiretor) {
+		this.idDiretor = idDiretor;
 	}
 
 	public String getNome() {
