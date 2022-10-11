@@ -18,7 +18,7 @@ import br.com.residencia.cinema.entity.Genero;
 import br.com.residencia.cinema.service.GeneroService;
 
 @RestController
-@RequestMapping("/genero")
+@RequestMapping("/generos")
 public class GeneroController {
 	@Autowired
 	GeneroService generoService;

@@ -18,7 +18,7 @@ public class GeneroService {
 	}
 	
 	public Genero getGeneroById(Integer id) {
-		return generoRepository.getReferenceById(id);
+		return generoRepository.findById(id).orElse(null);
 	}
 	
 	public Genero saveGenero(Genero genero) {

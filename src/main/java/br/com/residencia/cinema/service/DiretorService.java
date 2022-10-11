@@ -18,7 +18,7 @@ public class DiretorService {
 	}
 	
 	public Diretor getDiretorById(Integer id) {
-		return diretorRepository.getReferenceById(id);
+		return diretorRepository.findById(id).orElse(null);
 	}
 	
 	public Diretor saveDiretor(Diretor diretor) {

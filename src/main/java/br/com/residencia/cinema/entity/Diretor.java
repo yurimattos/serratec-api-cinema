@@ -1,5 +1,8 @@
 package br.com.residencia.cinema.entity;
 
+import java.util.Set;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,12 +16,14 @@ import javax.persistence.Table;
 public class Diretor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id_diretor")
 	private Integer id_diretor;
+	
+	@Column(name="nome")
 	private String nome;
 	
-	@OneToMany
-	@JoinColumn(name = "id_filme", referencedColumnName = "id_filme")
-	Filme filme;
+	@OneToMany(mappedBy = "diretor")
+	Set<Filme> filme;
 
 	public Integer getId_diretor() {
 		return id_diretor;
@@ -36,13 +41,15 @@ public class Diretor {
 		this.nome = nome;
 	}
 
-	public Filme getFilme() {
+	public Set<Filme> getFilme() {
 		return filme;
 	}
 
-	public void setFilme(Filme filme) {
+	public void setFilme(Set<Filme> filme) {
 		this.filme = filme;
 	}
+
+	
 	
 	
 }

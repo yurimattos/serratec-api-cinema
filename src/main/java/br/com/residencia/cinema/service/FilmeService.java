@@ -18,7 +18,7 @@ public class FilmeService {
 	}
 	
 	public Filme getFilmeById(Integer id) {
-		return filmeRepository.getReferenceById(id);
+		return filmeRepository.findById(id).orElse(null);
 	}
 	
 	public Filme saveFilme(Filme filme) {

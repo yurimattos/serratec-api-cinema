@@ -18,7 +18,7 @@ import br.com.residencia.cinema.entity.Filme;
 import br.com.residencia.cinema.service.FilmeService;
 
 @RestController
-@RequestMapping("/filme")
+@RequestMapping("/filmes")
 public class FilmeController {
 	@Autowired
 	FilmeService filmeService;

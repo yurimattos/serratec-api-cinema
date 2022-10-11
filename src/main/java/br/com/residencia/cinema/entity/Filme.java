@@ -16,12 +16,13 @@ import javax.persistence.Table;
 public class Filme {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id_filme")
 	private Integer id_filme;
 	
 	@Column(name="nome_br")
 	private String nome_br;
 	
-	@Column(name="nome-en")
+	@Column(name="nome_en")
 	private String nome_en;
 	
 	@Column(name="ano_lancamento")

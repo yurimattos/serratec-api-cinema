@@ -18,7 +18,7 @@ import br.com.residencia.cinema.entity.Diretor;
 import br.com.residencia.cinema.service.DiretorService;
 
 @RestController
-@RequestMapping("/diretor")
+@RequestMapping("/diretores")
 public class DiretorController {
 	@Autowired
 	DiretorService diretorService;
