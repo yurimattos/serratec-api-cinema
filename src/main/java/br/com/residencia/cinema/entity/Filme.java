@@ -10,12 +10,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
-@JsonIdentityInfo(
+/*@JsonIdentityInfo(
 		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "idFilme")
+		property = "idFilme")*/
 @Entity
 @Table(name="filme")
 public class Filme {
@@ -38,11 +37,11 @@ public class Filme {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_diretor", referencedColumnName = "id_diretor")
-	Diretor diretor;
+	private Diretor diretor;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_genero", referencedColumnName = "id_genero")
-	Genero genero;
+	private Genero genero;
 
 	public Integer getIdFilme() {
 		return idFilme;

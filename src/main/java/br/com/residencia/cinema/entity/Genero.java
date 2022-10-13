@@ -7,16 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@JsonIdentityInfo(
+/*@JsonIdentityInfo(
 		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "idGenero")
+		property = "idGenero")*/
 @Entity
 @Table(name="genero")
 public class Genero {
@@ -28,8 +26,9 @@ public class Genero {
 	@Column(name="descricao")
 	private String descricao;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "genero")
-	Set<Filme> filme;
+	private Set<Filme> filme;
 
 	public Integer getIdGenero() {
 		return idGenero;

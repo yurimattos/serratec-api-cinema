@@ -7,16 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@JsonIdentityInfo(
+/*@JsonIdentityInfo(
 		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "idDiretor")
+		property = "idDiretor")*/
 @Entity
 @Table(name="diretor")
 public class Diretor {
@@ -28,8 +27,9 @@ public class Diretor {
 	@Column(name="nome")
 	private String nome;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "diretor")
-	Set<Filme> filme;
+	private Set<Filme> filme;
 
 	public Integer getIdDiretor() {
 		return idDiretor;
